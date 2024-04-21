@@ -32,4 +32,4 @@ reports:
     files:
       - '**/*'
     base-directory: /testresults
-    file-format: "cobertura"
+    file-format: CoberturaXml

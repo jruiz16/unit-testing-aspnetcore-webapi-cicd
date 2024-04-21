@@ -5,12 +5,13 @@ phases:
       dotnet: 6.0
     commands:
       - cd netcore-unit-testing/web-api
+      - mkdir /testresult
       - dotnet restore
 
   pre_build:
     commands:
       # Ejecutar pruebas unitarias con cobertura
-      - dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./testresults
+      - dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" --results-directory /testresults
 
   build:
     commands:
@@ -30,5 +31,5 @@ reports:
   coverage-summary:
     files:
       - '**/*'
-    base-directory: ./testresults
+    base-directory: /testresults
     file-format: "lcov"

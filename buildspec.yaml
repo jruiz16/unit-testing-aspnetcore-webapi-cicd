@@ -30,6 +30,14 @@ artifacts:
 reports:
   coverage-summary:
     files:
-      - '**/*'
+      - '**/coverage.cobertura.xml'
     base-directory: /testresults
     file-format: CoberturaXml
+    type: CODE_COVERAGE
+
+  test-summary:
+    files:
+      - '**/your_test_report.xml'
+    base-directory: /testresults
+    file-format: "junitxml"
+    type: TEST

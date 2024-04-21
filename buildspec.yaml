@@ -10,7 +10,7 @@ phases:
   pre_build:
     commands:
       # Ejecutar pruebas unitarias con cobertura
-      - dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" --results-directory /codebuild/output/TestResults
+      - dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./testresults
 
   build:
     commands:
@@ -29,6 +29,6 @@ artifacts:
 reports:
   coverage-summary:
     files:
-      - /codebuild/output/TestResults/**/coverage.opencover.xml
-    base-directory: /codebuild/output/TestResults
+      - '**/*'
+    base-directory: ./testresults
     file-format: "lcov"

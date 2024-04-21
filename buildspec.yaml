@@ -27,13 +27,13 @@ artifacts:
   discard-paths: yes
   base-directory: 'netcore-unit-testing/web-api/publish'
 
-reports:
-  coverage-summary:
-    files:
-      - '**/coverage.cobertura.xml'
-    base-directory: /testresults
-    file-format: CoberturaXml
-    type: CODE_COVERAGE
+# reports:
+#   coverage-summary:
+#     files:
+#       - '**/coverage.cobertura.xml'
+#     base-directory: /testresults
+#     file-format: CoberturaXml
+#     type: CODE_COVERAGE
 
   # test-summary:
   #   files:

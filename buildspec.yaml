@@ -25,3 +25,10 @@ artifacts:
     - '**/*'
   discard-paths: yes
   base-directory: 'netcore-unit-testing/web-api/publish'
+
+reports:
+  coverage-summary:
+    files:
+      - /codebuild/output/TestResults/**/coverage.opencover.xml
+    base-directory: /codebuild/output/TestResults
+    file-format: "lcov"

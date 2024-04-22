@@ -6,12 +6,13 @@ phases:
       dotnet: 6.0
     commands:
       - cd netcore-unit-testing/web-api
+      - mkdir /testresult
       - dotnet restore
 
   pre_build:
     commands:
       # Ejecutar pruebas unitarias con cobertura
-      - dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" --results-directory /codebuild/output/TestResults
+      - dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" --results-directory /testresults
 
   build:
     commands:
@@ -26,3 +27,18 @@ artifacts:
     - '**/*'
   discard-paths: yes
   base-directory: 'netcore-unit-testing/web-api/publish'
+
+# reports:
+#   coverage-summary:
+#     files:
+#       - '**/coverage.cobertura.xml'
+#     base-directory: /testresults
+#     file-format: CoberturaXml
+#     type: CODE_COVERAGE
+
+  # test-summary:
+  #   files:
+  #     - '**/your_test_report.xml'
+  #   base-directory: /testresults
+  #   file-format: "junitxml"
+  #   type: TEST

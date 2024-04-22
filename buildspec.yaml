@@ -12,7 +12,7 @@ phases:
   pre_build:
     commands:
       # Ejecutar pruebas unitarias con cobertura
-      - dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" --results-directory /testresults
+      - dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage"
 
   build:
     commands:
